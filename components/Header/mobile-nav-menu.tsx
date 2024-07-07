@@ -34,7 +34,7 @@ import { navigationMenuTriggerStyle } from "./navigation";
 
 const MobileNavMenu = () => {
     return (
-        <div className="">
+        <div className='ml-auto  md:hidden mt-[6px]'>
             <Sheet>
                 <SheetTrigger>
                     <MenuIcon />
@@ -54,6 +54,7 @@ const MobileNavMenu = () => {
                 </SheetContent>
             </Sheet>
         </div>
+
     );
 };
 

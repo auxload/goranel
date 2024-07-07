@@ -4,31 +4,28 @@ import Link from 'next/link'
 import Logo from "@/public/Logo.svg"
 import Image from 'next/image'
 import { Menu } from 'lucide-react'
-import MobileNavigation from './mobile-nav-config'
+import MobileNavMenu from './mobile-nav-menu'
+import TopHeader from './top-header'
+import { Button } from '../ui/button'
 
 const Header = () => {
     return (
         <>
-            <div className='h-9 bg-primary  text-white text-xs md:text-sm'>
-                <ul className='flex gap-5 container h-full  items-center'>
-                    <li>
-                        <a href=""> +(40) 723 635 553</a>
-                    </li>
-                    <li>
-                        <a href=""> gd69435@gmail.com</a>
-                    </li>
-                    <li>
-                        <a href=""> Str Principală 239</a>
-                    </li>
-                </ul>
-            </div>
-            <header className="flex  border min-h-20 w-full shrink-0 items-center px-4 md:px-6">
-                <div className="flex items-center  container">
-                    <Link href="/" className=" flex items-center " prefetch={false}>
+            <TopHeader />
+            <header className="flex fixed bg-white backdrop-blur-md flex-col min-h-20 w-full shrink-0 items-center px-4 md:px-6">
+                <div className="flex items-center  container justify-between">
+                    <TopHeader />
+                    <Link href="/" className=" flex  items-center flex-1 justify-center" prefetch={false}>
                         <Image alt='Logo' className='py-2 w-[150px] md:w-[250px]' src={Logo} />
                     </Link>
-                    <Navigation className="md:flex items-center gap-4 sm:gap-6 ml-auto hidden" />
-                    <MobileNavigation />
+                    <div className=' flex-1 flex'>
+                        <Button variant={"link"} className='ml-auto '>Contact</Button>
+
+                    </div>
+                </div>
+                <div className='py-4'>
+                    <Navigation className="md:flex   items-center flex-1 gap-4 sm:gap-6  hidden" />
+                    <MobileNavMenu />
                 </div>
             </header>
         </>

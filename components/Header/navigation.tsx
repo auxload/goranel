@@ -2,7 +2,6 @@
 
 import * as React from "react"
 import Link from "next/link"
-
 import { cn } from "@/lib/utils"
 import {
     NavigationMenu,
@@ -16,7 +15,7 @@ import { cva } from "class-variance-authority"
 import { usePathname } from "next/navigation"
 
 export const navigationMenuTriggerStyle = cva(
-    "group inline-flex h-10 w-max items-center justify-center rounded-md  px-4 py-2 text-base font-medium transition-colors  hover:text-primary text-accent-foreground  focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-primary data-[state=open]:text-primary"
+    "group hover:underline inline-flex h-10 w-max items-center justify-center rounded-md  px-4 py-2 text-base font-medium transition-colors  hover:text-primary text-accent-foreground  focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-primary data-[state=open]:text-primary"
 )
 export const navigationMenuActiveStyle = cva("text-primary")
 
@@ -64,7 +63,7 @@ export function Navigation({ className }: { className?: string }) {
     const path = usePathname()
     return (
         <NavigationMenu className={className}>
-            <NavigationMenuList>
+            <NavigationMenuList className="flex-wrap">
                 {navMenuData.map((menuItem, idx) => {
                     if (menuItem.subMenu) {
                         return (

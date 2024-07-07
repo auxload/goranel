@@ -19,7 +19,7 @@ const Header = () => {
                         <Image alt='Logo' className='py-2 w-[150px] md:w-[250px]' src={Logo} />
                     </Link>
                     <div className=' flex-1 flex'>
-                        <Button variant={"link"} className='ml-auto '>Contact</Button>
+                        <Button size={'sm'} className='ml-auto rounded-full'>Contact</Button>
 
                     </div>
                 </div>

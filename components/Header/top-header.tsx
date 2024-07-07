@@ -33,9 +33,9 @@ const TopHeader = () => {
         <div className='flex-1 '>
             <div className='   flex  justify-between text-white text-xs '>
                 <ul className='flex gap-4   h-full  items-center'>
-                    {topHeaderMenuItemsSocials.map(item => {
+                    {topHeaderMenuItemsSocials.map((item, idx) => {
                         return (
-                            <li className='flex items-center gap-2 text-xs text-muted-foreground'>
+                            <li key={idx} className='flex items-center gap-2 text-xs text-muted-foreground'>
                                 <a className='flex gap-1 items-center' href={item.href}>{item.icon} <span className='hidden md:block'>{item.title}</span></a>
                             </li>
                         )

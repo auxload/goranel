@@ -37,10 +37,14 @@ const MobileNavMenu = () => {
         <div className='ml-auto  md:hidden mt-[6px]'>
             <Sheet>
                 <SheetTrigger>
-                    <MenuIcon />
+                    <div className="bg-primary rounded-md p-2 flex gap-2">
+                        <MenuIcon className="text-white"/>
+                        <span className="text-white">Meniu</span>
+
+                    </div>
                 </SheetTrigger>
                 <SheetContent
-                    side={"right"}
+                    side={"top"}
                     className="py-9 px-6 overflow-auto gap-10 flex flex-col "
                 >
                     <SheetHeader>

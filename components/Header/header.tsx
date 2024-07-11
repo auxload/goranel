@@ -3,7 +3,7 @@ import { Navigation } from './navigation'
 import Link from 'next/link'
 import Logo from "@/public/Logo.svg"
 import Image from 'next/image'
-import { Menu } from 'lucide-react'
+import { Flower, Menu } from 'lucide-react'
 import MobileNavMenu from './mobile-nav-menu'
 import TopHeader from './top-header'
 import { Button } from '../ui/button'
@@ -12,14 +12,18 @@ const Header = () => {
     return (
         <>
             <TopHeader />
-            <header className="flex fixed bg-white backdrop-blur-md flex-col min-h-20 w-full shrink-0 items-center px-4 md:px-6">
+
+            <header className="flex sticky top-0   bg-white flex-col min-h-20 w-full shrink-0 items-center ">
+
+
                 <div className="flex items-center  container justify-between">
-                    <TopHeader />
+                    <div className='hidden md:flex flex-1'></div>
+
                     <Link href="/" className=" flex  items-center flex-1 justify-center" prefetch={false}>
-                        <Image alt='Logo' className='py-2 w-[150px] md:w-[250px]' src={Logo} />
+                        <Image alt='Logo' className='py-2 w-[200px] md:w-[250px]' src={Logo} />
                     </Link>
-                    <div className=' flex-1 flex'>
-                        <Button size={'sm'} className='ml-auto rounded-full'>Contact</Button>
+                    <div className=' flex-1 hidden md:flex'>
+                        <Button variant={"link"} className='ml-auto rounded-full '><Flower/> Contactează-ne  acum!</Button>
 
                     </div>
                 </div>
